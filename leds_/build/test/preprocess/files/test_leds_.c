@@ -30,7 +30,7 @@ void test_leds_apagados_al_inicializar()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(34), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(32), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -48,7 +48,7 @@ void test_prender_unico_led()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(39), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -68,7 +68,7 @@ void test_apagar_unico_led()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(49), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(47), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -94,6 +94,6 @@ void test_prender_apagar_multiples_leds()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(60), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(58), UNITY_DISPLAY_STYLE_HEX16);
 
 }

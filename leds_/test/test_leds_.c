@@ -1,14 +1,15 @@
 /*
-// Todos los leds apagados después de inicializar el puerto
-// Prender un único led
-// Apagar un único led 
-// Apagar y prender múltiples leds
-// Prender todos los leds de una vez
-
-// Apagar todos los leds de una vez
-// Consultar el estado de un único led
+// Todos los leds apagados después de inicializar el puerto -- ok
+// Prender un único led -- ok
+// Apagar un único led  -- ok
+// Apagar y prender múltiples leds -- ok
+// Prender todos los leds de una vez (una función sin parámetros)
+// Apagar todos los leds de una vez (una función sin parámetros)
+// Consultar el estado de un único led prendido 
+// Consultar el estado de un único led apagado
 // Revisar límites de los parámetros
-// Revisar parámetros fuera de los limites
+// Revisar parámetros fuera de los limites (verificar que no 
+   se mande un parámetro fuera de límite)
 
 */
 
@@ -56,3 +57,5 @@ void test_prender_apagar_multiples_leds()
     turn_off_led(3);
     TEST_ASSERT_EQUAL_HEX16(1 << 4, virtual_leds);
 }
+
+
