@@ -12,7 +12,7 @@ static uint16_t *port_leds;
 void init_leds(uint16_t *virtual_leds)
 {
     port_leds = virtual_leds;
-    *port_leds = RESET_ALL_LEDS;
+    turn_off_all_leds();
 }
 
 void turn_on_led(int num_led)
