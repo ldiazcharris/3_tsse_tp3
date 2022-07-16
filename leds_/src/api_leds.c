@@ -1,5 +1,8 @@
 #include "api_leds.h"
 
+// Valor que se debe restar a num_led para obtener el bit correcto
+#define RES_POSITION 1 
+
 static uint16_t *port_leds;
 
 void init_leds(uint16_t *virtual_leds)
@@ -10,10 +13,10 @@ void init_leds(uint16_t *virtual_leds)
 
 void turn_on_led(int num_led)
 {
-    *port_leds = 1 << 5;
+    *port_leds |= (1 << (num_led - RES_POSITION));
 }
 
 void turn_off_led(int num_led)
 {
-    *port_leds = 0 << 5;
+    *port_leds &= ~(1 << (num_led - RES_POSITION));
 }

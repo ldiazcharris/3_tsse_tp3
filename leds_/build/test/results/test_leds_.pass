@@ -4,23 +4,27 @@
   :file: test_leds_.c
 :successes:
 - :test: test_leds_apagados_al_inicializar
-  :line: 23
+  :line: 30
   :message: ''
   :unity_test_time: 0
 - :test: test_prender_unico_led
-  :line: 31
+  :line: 38
   :message: ''
   :unity_test_time: 0
 - :test: test_apagar_unico_led
-  :line: 40
+  :line: 45
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_apagar_multiples_leds
+  :line: 53
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
+  :total: 4
+  :passed: 4
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002421302999209729
+:time: 0.0020842209996772

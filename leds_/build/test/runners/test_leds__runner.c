@@ -13,6 +13,7 @@ extern void tearDown(void);
 extern void test_leds_apagados_al_inicializar();
 extern void test_prender_unico_led();
 extern void test_apagar_unico_led();
+extern void test_prender_apagar_multiples_leds();
 
 
 /*=======Mock Management=====*/
@@ -28,9 +29,6 @@ static void CMock_Verify(void)
 static void CMock_Destroy(void)
 {
 }
-
-/*=======Setup (stub)=====*/
-void setUp(void) {}
 
 /*=======Teardown (stub)=====*/
 void tearDown(void) {}
@@ -83,9 +81,10 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_leds_.c");
-  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 23);
-  run_test(test_prender_unico_led, "test_prender_unico_led", 31);
-  run_test(test_apagar_unico_led, "test_apagar_unico_led", 40);
+  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 30);
+  run_test(test_prender_unico_led, "test_prender_unico_led", 38);
+  run_test(test_apagar_unico_led, "test_apagar_unico_led", 45);
+  run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 53);
 
   return UnityEnd();
 }
