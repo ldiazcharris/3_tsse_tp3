@@ -21,16 +21,10 @@
 
 static uint16_t virtual_leds; 
 
-void registrar_error(gravedad_t gravedad, const char * funcion, int linea, const char * mensaje, ...)
-{
-
-}
-
 void setUp(void)
 {
     init_leds(&virtual_leds);
 }
-
 
 // Todos los leds apagados después de inicializar el puerto
 void test_leds_apagados_al_inicializar()

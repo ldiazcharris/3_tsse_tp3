@@ -96,20 +96,20 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_leds_.c");
-  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 36);
-  run_test(test_prender_unico_led, "test_prender_unico_led", 44);
-  run_test(test_apagar_unico_led, "test_apagar_unico_led", 51);
-  run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 59);
-  run_test(test_prender_todos_los_leds, "test_prender_todos_los_leds", 70);
-  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 77);
-  run_test(test_consultar_estado_un_led_prendido, "test_consultar_estado_un_led_prendido", 84);
-  run_test(test_consultar_estado_un_led_apagado, "test_consultar_estado_un_led_apagado", 94);
-  run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 107);
-  run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 115);
-  run_test(test_valor_invalido_limite_superior_read_led, "test_valor_invalido_limite_superior_read_led", 123);
-  run_test(test_valor_invalido_limite_inferior_turn_on_led, "test_valor_invalido_limite_inferior_turn_on_led", 131);
-  run_test(test_valor_invalido_limite_inferior_turn_off_led, "test_valor_invalido_limite_inferior_turn_off_led", 139);
-  run_test(test_valor_invalido_limite_inferior_read_led, "test_valor_invalido_limite_inferior_read_led", 147);
+  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 30);
+  run_test(test_prender_unico_led, "test_prender_unico_led", 38);
+  run_test(test_apagar_unico_led, "test_apagar_unico_led", 45);
+  run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 53);
+  run_test(test_prender_todos_los_leds, "test_prender_todos_los_leds", 64);
+  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 71);
+  run_test(test_consultar_estado_un_led_prendido, "test_consultar_estado_un_led_prendido", 78);
+  run_test(test_consultar_estado_un_led_apagado, "test_consultar_estado_un_led_apagado", 88);
+  run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 98);
+  run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 106);
+  run_test(test_valor_invalido_limite_superior_read_led, "test_valor_invalido_limite_superior_read_led", 114);
+  run_test(test_valor_invalido_limite_inferior_turn_on_led, "test_valor_invalido_limite_inferior_turn_on_led", 122);
+  run_test(test_valor_invalido_limite_inferior_turn_off_led, "test_valor_invalido_limite_inferior_turn_off_led", 130);
+  run_test(test_valor_invalido_limite_inferior_read_led, "test_valor_invalido_limite_inferior_read_led", 138);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
