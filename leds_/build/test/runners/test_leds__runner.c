@@ -11,6 +11,8 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_leds_apagados_al_inicializar();
+extern void test_prender_unico_led();
+extern void test_apagar_unico_led();
 
 
 /*=======Mock Management=====*/
@@ -82,6 +84,8 @@ int main(void)
 {
   UnityBegin("test_leds_.c");
   run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 23);
+  run_test(test_prender_unico_led, "test_prender_unico_led", 31);
+  run_test(test_apagar_unico_led, "test_apagar_unico_led", 40);
 
   return UnityEnd();
 }

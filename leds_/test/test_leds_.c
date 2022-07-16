@@ -26,3 +26,22 @@ void test_leds_apagados_al_inicializar()
     init_leds(&virtual_leds);
     TEST_ASSERT_EQUAL_HEX16(0x0000, virtual_leds);
 }
+
+// Prender un único led
+void test_prender_unico_led()
+{
+    uint16_t virtual_leds = 0xffff; 
+    init_leds(&virtual_leds);
+    turn_on_led(5);
+    TEST_ASSERT_EQUAL_HEX16(1 << 5, virtual_leds);
+}
+
+// Apagar un único led 
+void test_apagar_unico_led()
+{
+    uint16_t virtual_leds = 0xffff; 
+    init_leds(&virtual_leds);
+    turn_on_led(5);
+    turn_off_led(5);
+    TEST_ASSERT_EQUAL_HEX16(0x0000, virtual_leds);
+}

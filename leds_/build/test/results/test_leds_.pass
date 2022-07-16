@@ -7,12 +7,20 @@
   :line: 23
   :message: ''
   :unity_test_time: 0
+- :test: test_prender_unico_led
+  :line: 31
+  :message: ''
+  :unity_test_time: 0
+- :test: test_apagar_unico_led
+  :line: 40
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 1
-  :passed: 1
+  :total: 3
+  :passed: 3
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002350112999920384
+:time: 0.002421302999209729
