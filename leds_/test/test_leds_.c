@@ -1,6 +1,28 @@
-#include "unity.h"
+/*
+// Todos los leds apagados después de inicializar el puerto
+// Prender un único led
+// Apagar un único led 
+// Apagar y encender múltiples leds
+// Pender todos los leds de una vez
 
+// Apagar todos los leds de una vez
+// Consultar el estado de un único led
+// Revisar límites de los parámetros
+// Revisar parámetros fuera de los limites
+
+*puerto |= (1 << (led - 1));
+    *puerto &= ~(1 << (led - 1));
+
+*/
+
+
+#include "unity.h"
+#include "api_leds.h"
+
+// Todos los leds apagados después de inicializar el puerto
 void test_leds_apagados_al_inicializar()
 {
-    TEST_FAIL_MESSAGE("empezamos"); 
+    uint16_t virtual_leds = 0xffff; 
+    init_leds(&virtual_leds);
+    TEST_ASSERT_EQUAL_HEX16(0x0000, virtual_leds);
 }
