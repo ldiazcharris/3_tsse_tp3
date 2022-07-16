@@ -100,9 +100,6 @@ void test_consultar_estado_un_led_apagado()
     TEST_ASSERT_EQUAL_HEX16(RESET, read_led(4));
 }
 
-
-
-
 // Revisar parámetros fuera de los limites
 void test_valor_invalido_limite_superior_turn_on_led()
 {
