@@ -27,20 +27,28 @@
   :line: 77
   :message: ''
   :unity_test_time: 0
+- :test: test_consultar_estado_un_led_prendido
+  :line: 84
+  :message: ''
+  :unity_test_time: 0
+- :test: test_consultar_estado_un_led_apagado
+  :line: 94
+  :message: ''
+  :unity_test_time: 0
 - :test: test_valor_invalido_limite_superior_turn_on_led
-  :line: 85
+  :line: 107
   :message: ''
   :unity_test_time: 0
 - :test: test_valor_invalido_limite_superior_turn_off_led
-  :line: 93
+  :line: 115
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 8
-  :passed: 8
+  :total: 10
+  :passed: 10
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0019006500006071292
+:time: 0.001889330000267364

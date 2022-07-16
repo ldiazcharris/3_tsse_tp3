@@ -80,6 +80,28 @@ void test_apagar_todos_los_leds()
     TEST_ASSERT_EQUAL_HEX16(0x0000, virtual_leds);
 }
 
+// Consultar el estado de un único led prendido
+void test_consultar_estado_un_led_prendido()
+{
+    turn_off_all_leds();
+    turn_on_led(5);
+    turn_on_led(4);
+    turn_on_led(3);
+    TEST_ASSERT_EQUAL_HEX16(SET, read_led(3));
+}
+
+// Consultar el estado de un único led apagado
+void test_consultar_estado_un_led_apagado()
+{
+    turn_on_all_leds();
+    turn_off_led(5);
+    turn_off_led(4);
+    turn_on_led(3);
+    TEST_ASSERT_EQUAL_HEX16(RESET, read_led(4));
+}
+
+// Consultar el estado de un único led apagado
+
 
 // Revisar parámetros fuera de los limites
 void test_valor_invalido_limite_superior_turn_on_led()

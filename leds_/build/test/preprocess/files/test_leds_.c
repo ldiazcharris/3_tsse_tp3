@@ -153,17 +153,69 @@ void test_apagar_todos_los_leds()
 
 
 
+void test_consultar_estado_un_led_prendido()
+
+{
+
+    turn_off_all_leds();
+
+    turn_on_led(5);
+
+    turn_on_led(4);
+
+    turn_on_led(3);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((SET)), (UNITY_INT)(UNITY_INT16)((read_led(3))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(90), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+void test_consultar_estado_un_led_apagado()
+
+{
+
+    turn_on_all_leds();
+
+    turn_off_led(5);
+
+    turn_off_led(4);
+
+    turn_on_led(3);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((RESET)), (UNITY_INT)(UNITY_INT16)((read_led(4))), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(100), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+
+
+
+
 
 
 void test_valor_invalido_limite_superior_turn_on_led()
 
 {
 
-    RegistrarMensaje_CMockExpect(87, ALERTA, "turn_on_led", 0, "Invalid led number");
+    RegistrarMensaje_CMockExpect(109, ALERTA, "turn_on_led", 0, "Invalid led number");
 
-    RegistrarMensaje_CMockIgnoreArg_linea(88);
+    RegistrarMensaje_CMockIgnoreArg_linea(110);
 
-    RegistrarMensaje_CMockIgnoreArg_funcion(89);
+    RegistrarMensaje_CMockIgnoreArg_funcion(111);
 
     turn_on_led(18);
 
@@ -175,11 +227,11 @@ void test_valor_invalido_limite_superior_turn_off_led()
 
 {
 
-    RegistrarMensaje_CMockExpect(95, ALERTA, "turn_off_led", 0, "Invalid led number");
+    RegistrarMensaje_CMockExpect(117, ALERTA, "turn_off_led", 0, "Invalid led number");
 
-    RegistrarMensaje_CMockIgnoreArg_linea(96);
+    RegistrarMensaje_CMockIgnoreArg_linea(118);
 
-    RegistrarMensaje_CMockIgnoreArg_funcion(97);
+    RegistrarMensaje_CMockIgnoreArg_funcion(119);
 
     turn_off_led(18);
 

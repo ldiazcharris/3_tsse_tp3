@@ -39,6 +39,21 @@ void turn_off_led(int num_led)
     }
 }
 
+int read_led(int num_led)
+{
+    uint8_t led_state = RESET;
+    led_state = (led_to_mask(num_led)&*port_leds)>>(num_led - RES_POSITION);
+
+    if(led_state != 0)
+    {
+        return led_state;
+    }
+    else
+    {
+        return led_state;
+    }
+}
+
 void turn_on_all_leds(void)
 {
     *port_leds = SET_ALL_LEDS;

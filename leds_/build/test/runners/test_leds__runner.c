@@ -18,6 +18,8 @@ extern void test_apagar_unico_led();
 extern void test_prender_apagar_multiples_leds();
 extern void test_prender_todos_los_leds();
 extern void test_apagar_todos_los_leds();
+extern void test_consultar_estado_un_led_prendido();
+extern void test_consultar_estado_un_led_apagado();
 extern void test_valor_invalido_limite_superior_turn_on_led();
 extern void test_valor_invalido_limite_superior_turn_off_led();
 
@@ -96,8 +98,10 @@ int main(void)
   run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 59);
   run_test(test_prender_todos_los_leds, "test_prender_todos_los_leds", 70);
   run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 77);
-  run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 85);
-  run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 93);
+  run_test(test_consultar_estado_un_led_prendido, "test_consultar_estado_un_led_prendido", 84);
+  run_test(test_consultar_estado_un_led_apagado, "test_consultar_estado_un_led_apagado", 94);
+  run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 107);
+  run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 115);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

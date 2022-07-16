@@ -16,6 +16,13 @@
 // Prender todos los leds
 #define  SET_ALL_LEDS 0xffff
 
+// Estado de leds
+typedef enum
+{
+    RESET = 0,
+    SET
+}led_state_t;
+
 /**
  * @brief inicializa el puerto de leds en 0, todos apagados
  * 
@@ -36,6 +43,13 @@ void turn_on_led(int num_led);
  * @param num_led  número del led a operar (no la posición)
  */
 void turn_off_led(int num_led);
+
+/**
+ * @brief consulta el estado de un led
+ * 
+ * @param num_led número del led a leer (no la posición)
+ */
+int read_led(int num_led);
 
 /**
  * @brief prende todos leds del puerto GPIO
