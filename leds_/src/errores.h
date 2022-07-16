@@ -65,6 +65,8 @@ typedef enum gravedad_e {
     DEPURACION,         //!< Mensaje de depuracino
 } gravedad_t;
 
+typedef void (*registro_errores_t)(gravedad_t gravedad, const char * funcion, int linea, const char * mensaje, ...);
+
 /* === Declaraciones de variables externas ===================================================== */
 
 /* === Declaraciones de funciones externas ===================================================== */

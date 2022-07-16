@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+
 // Valor que se debe restar a num_led para obtener el la posición correcta del led
 #define RES_POSITION 1 
 
@@ -10,7 +11,10 @@
 #define SET_BIT 1
 
 // Apagar todos los leds
-#define ALL_LEDS_OFF 0
+#define RESET_ALL_LEDS 0x0000
+
+// Prender todos los leds
+#define  SET_ALL_LEDS 0xffff
 
 /**
  * @brief inicializa el puerto de leds en 0, todos apagados
@@ -33,5 +37,16 @@ void turn_on_led(int num_led);
  */
 void turn_off_led(int num_led);
 
+/**
+ * @brief prende todos leds del puerto GPIO
+ * 
+ */
+void turn_on_all_leds(void);
+
+/**
+ * @brief apaga todos leds del puerto GPIO
+ * 
+ */
+void turn_off_all_leds(void);
 
 #endif 

@@ -4,27 +4,43 @@
   :file: test_leds_.c
 :successes:
 - :test: test_leds_apagados_al_inicializar
-  :line: 28
-  :message: ''
-  :unity_test_time: 0
-- :test: test_prender_unico_led
   :line: 36
   :message: ''
   :unity_test_time: 0
+- :test: test_prender_unico_led
+  :line: 44
+  :message: ''
+  :unity_test_time: 0
 - :test: test_apagar_unico_led
-  :line: 43
+  :line: 51
   :message: ''
   :unity_test_time: 0
 - :test: test_prender_apagar_multiples_leds
-  :line: 51
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_todos_los_leds
+  :line: 70
+  :message: ''
+  :unity_test_time: 0
+- :test: test_apagar_todos_los_leds
+  :line: 77
+  :message: ''
+  :unity_test_time: 0
+- :test: test_valor_invalido_limite_superior_turn_on_led
+  :line: 85
+  :message: ''
+  :unity_test_time: 0
+- :test: test_valor_invalido_limite_superior_turn_off_led
+  :line: 93
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0018474919997970574
+:time: 0.0019006500006071292

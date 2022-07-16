@@ -2,6 +2,8 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
+#include "cmock.h"
+#include "mock_errores.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -14,6 +16,10 @@ extern void test_leds_apagados_al_inicializar();
 extern void test_prender_unico_led();
 extern void test_apagar_unico_led();
 extern void test_prender_apagar_multiples_leds();
+extern void test_prender_todos_los_leds();
+extern void test_apagar_todos_los_leds();
+extern void test_valor_invalido_limite_superior_turn_on_led();
+extern void test_valor_invalido_limite_superior_turn_off_led();
 
 
 /*=======Mock Management=====*/
@@ -22,12 +28,15 @@ static void CMock_Init(void)
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
+  mock_errores_Init();
 }
 static void CMock_Verify(void)
 {
+  mock_errores_Verify();
 }
 static void CMock_Destroy(void)
 {
+  mock_errores_Destroy();
 }
 
 /*=======Teardown (stub)=====*/
@@ -81,10 +90,15 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_leds_.c");
-  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 28);
-  run_test(test_prender_unico_led, "test_prender_unico_led", 36);
-  run_test(test_apagar_unico_led, "test_apagar_unico_led", 43);
-  run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 51);
+  run_test(test_leds_apagados_al_inicializar, "test_leds_apagados_al_inicializar", 36);
+  run_test(test_prender_unico_led, "test_prender_unico_led", 44);
+  run_test(test_apagar_unico_led, "test_apagar_unico_led", 51);
+  run_test(test_prender_apagar_multiples_leds, "test_prender_apagar_multiples_leds", 59);
+  run_test(test_prender_todos_los_leds, "test_prender_todos_los_leds", 70);
+  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 77);
+  run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 85);
+  run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 93);
 
+  CMock_Guts_MemFreeFinal();
   return UnityEnd();
 }

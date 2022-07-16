@@ -1,5 +1,5 @@
 #include "api_leds.h"
-
+#include "errores.h"
 
 // Función para enmascarar el puerto de leds
 uint16_t led_to_mask(int num_led)
@@ -12,15 +12,39 @@ static uint16_t *port_leds;
 void init_leds(uint16_t *virtual_leds)
 {
     port_leds = virtual_leds;
-    *port_leds = ALL_LEDS_OFF;
+    *port_leds = RESET_ALL_LEDS;
 }
 
 void turn_on_led(int num_led)
 {
-    *port_leds |= led_to_mask(num_led);
+    if(num_led > 16) 
+    {
+        Alerta("Invalid led number");
+    }
+    else
+    {
+        *port_leds |= led_to_mask(num_led);
+    }
 }
 
 void turn_off_led(int num_led)
 {
-    *port_leds &= ~led_to_mask(num_led);
+    if(num_led > 16) 
+    {
+        Alerta("Invalid led number");
+    }
+    else
+    {
+        *port_leds &= ~led_to_mask(num_led);
+    }
+}
+
+void turn_on_all_leds(void)
+{
+    *port_leds = SET_ALL_LEDS;
+}
+
+void turn_off_all_leds(void)
+{
+    *port_leds = RESET_ALL_LEDS;
 }
