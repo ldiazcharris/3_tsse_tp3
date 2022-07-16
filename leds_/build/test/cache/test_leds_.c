@@ -236,3 +236,67 @@ void test_valor_invalido_limite_superior_turn_off_led()
     turn_off_led(18);
 
 }
+
+
+
+void test_valor_invalido_limite_superior_read_led()
+
+{
+
+    RegistrarMensaje_CMockExpect(125, ALERTA, "read_led", 0, "Invalid led number");
+
+    RegistrarMensaje_CMockIgnoreArg_linea(126);
+
+    RegistrarMensaje_CMockIgnoreArg_funcion(127);
+
+    read_led(18);
+
+}
+
+
+
+void test_valor_invalido_limite_inferior_turn_on_led()
+
+{
+
+    RegistrarMensaje_CMockExpect(133, ALERTA, "turn_on_led", 0, "Invalid led number");
+
+    RegistrarMensaje_CMockIgnoreArg_linea(134);
+
+    RegistrarMensaje_CMockIgnoreArg_funcion(135);
+
+    turn_on_led(0);
+
+}
+
+
+
+void test_valor_invalido_limite_inferior_turn_off_led()
+
+{
+
+    RegistrarMensaje_CMockExpect(141, ALERTA, "turn_off_led", 0, "Invalid led number");
+
+    RegistrarMensaje_CMockIgnoreArg_linea(142);
+
+    RegistrarMensaje_CMockIgnoreArg_funcion(143);
+
+    turn_off_led(0);
+
+}
+
+
+
+void test_valor_invalido_limite_inferior_read_led()
+
+{
+
+    RegistrarMensaje_CMockExpect(149, ALERTA, "read_led", 0, "Invalid led number");
+
+    RegistrarMensaje_CMockIgnoreArg_linea(150);
+
+    RegistrarMensaje_CMockIgnoreArg_funcion(151);
+
+    read_led(0);
+
+}

@@ -22,6 +22,10 @@ extern void test_consultar_estado_un_led_prendido();
 extern void test_consultar_estado_un_led_apagado();
 extern void test_valor_invalido_limite_superior_turn_on_led();
 extern void test_valor_invalido_limite_superior_turn_off_led();
+extern void test_valor_invalido_limite_superior_read_led();
+extern void test_valor_invalido_limite_inferior_turn_on_led();
+extern void test_valor_invalido_limite_inferior_turn_off_led();
+extern void test_valor_invalido_limite_inferior_read_led();
 
 
 /*=======Mock Management=====*/
@@ -102,6 +106,10 @@ int main(void)
   run_test(test_consultar_estado_un_led_apagado, "test_consultar_estado_un_led_apagado", 94);
   run_test(test_valor_invalido_limite_superior_turn_on_led, "test_valor_invalido_limite_superior_turn_on_led", 107);
   run_test(test_valor_invalido_limite_superior_turn_off_led, "test_valor_invalido_limite_superior_turn_off_led", 115);
+  run_test(test_valor_invalido_limite_superior_read_led, "test_valor_invalido_limite_superior_read_led", 123);
+  run_test(test_valor_invalido_limite_inferior_turn_on_led, "test_valor_invalido_limite_inferior_turn_on_led", 131);
+  run_test(test_valor_invalido_limite_inferior_turn_off_led, "test_valor_invalido_limite_inferior_turn_off_led", 139);
+  run_test(test_valor_invalido_limite_inferior_read_led, "test_valor_invalido_limite_inferior_read_led", 147);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

@@ -17,7 +17,7 @@ void init_leds(uint16_t *virtual_leds)
 
 void turn_on_led(int num_led)
 {
-    if(num_led > 16) 
+    if(num_led > 16 || num_led <= 0) 
     {
         Alerta("Invalid led number");
     }
@@ -29,7 +29,7 @@ void turn_on_led(int num_led)
 
 void turn_off_led(int num_led)
 {
-    if(num_led > 16) 
+    if(num_led > 16 || num_led <= 0) 
     {
         Alerta("Invalid led number");
     }
@@ -41,10 +41,16 @@ void turn_off_led(int num_led)
 
 int read_led(int num_led)
 {
+    if(num_led > 16 || num_led <= 0) 
+    {
+        Alerta("Invalid led number");
+    }
+    else
+    {
     uint8_t led_state = RESET;
     led_state = (led_to_mask(num_led)&*port_leds)>>(num_led - RES_POSITION);
     return led_state;
- 
+    }
 }
 
 void turn_on_all_leds(void)

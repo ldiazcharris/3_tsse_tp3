@@ -43,12 +43,28 @@
   :line: 115
   :message: ''
   :unity_test_time: 0
+- :test: test_valor_invalido_limite_superior_read_led
+  :line: 123
+  :message: ''
+  :unity_test_time: 0
+- :test: test_valor_invalido_limite_inferior_turn_on_led
+  :line: 131
+  :message: ''
+  :unity_test_time: 0
+- :test: test_valor_invalido_limite_inferior_turn_off_led
+  :line: 139
+  :message: ''
+  :unity_test_time: 0
+- :test: test_valor_invalido_limite_inferior_read_led
+  :line: 147
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 10
-  :passed: 10
+  :total: 14
+  :passed: 14
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0053655759984394535
+:time: 0.0018609429971547797

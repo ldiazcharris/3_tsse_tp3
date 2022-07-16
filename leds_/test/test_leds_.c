@@ -4,10 +4,10 @@
 // Apagar un único led  -- ok
 // Apagar y prender múltiples leds -- ok
 // Prender todos los leds de una vez (una función sin parámetros) -- ok
-// Apagar todos los leds de una vez (una función sin parámetros) -- ok
-// Consultar el estado de un único led prendido  
-// Consultar el estado de un único led apagado
-// Revisar límites de los parámetros
+// Apagar todos los leds de una vez (una función sin parámetros)  -- ok
+// Consultar el estado de un único led prendido  -- ok
+// Consultar el estado de un único led apagado   -- ok
+// Revisar límites de los parámetros 
 // Revisar parámetros fuera de los limites (verificar que no 
    se mande un parámetro fuera de límite) -- ok
 
@@ -100,7 +100,7 @@ void test_consultar_estado_un_led_apagado()
     TEST_ASSERT_EQUAL_HEX16(RESET, read_led(4));
 }
 
-// Consultar el estado de un único led apagado
+
 
 
 // Revisar parámetros fuera de los limites
@@ -118,4 +118,36 @@ void test_valor_invalido_limite_superior_turn_off_led()
     RegistrarMensaje_IgnoreArg_linea();
     RegistrarMensaje_IgnoreArg_funcion();
     turn_off_led(18);
+}
+
+void test_valor_invalido_limite_superior_read_led()
+{
+    RegistrarMensaje_Expect(ALERTA, "read_led", 0, "Invalid led number");
+    RegistrarMensaje_IgnoreArg_linea();
+    RegistrarMensaje_IgnoreArg_funcion();
+    read_led(18);
+}
+
+void test_valor_invalido_limite_inferior_turn_on_led()
+{
+    RegistrarMensaje_Expect(ALERTA, "turn_on_led", 0, "Invalid led number");
+    RegistrarMensaje_IgnoreArg_linea();
+    RegistrarMensaje_IgnoreArg_funcion();
+    turn_on_led(0);
+}
+
+void test_valor_invalido_limite_inferior_turn_off_led()
+{
+    RegistrarMensaje_Expect(ALERTA, "turn_off_led", 0, "Invalid led number");
+    RegistrarMensaje_IgnoreArg_linea();
+    RegistrarMensaje_IgnoreArg_funcion();
+    turn_off_led(0);
+}
+
+void test_valor_invalido_limite_inferior_read_led()
+{
+    RegistrarMensaje_Expect(ALERTA, "read_led", 0, "Invalid led number");
+    RegistrarMensaje_IgnoreArg_linea();
+    RegistrarMensaje_IgnoreArg_funcion();
+    read_led(0);
 }
